@@ -11,6 +11,10 @@ export class MoviesComponent {
 
     constructor(private _movieService: MovieService) { 
         this._movieService.getPopular().subscribe(res => {
+          //console.log(res.results);
+        });
+
+        this._movieService.getTheaters().subscribe(res => {
           console.log(res.results);
         });
     }

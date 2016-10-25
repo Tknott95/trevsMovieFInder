@@ -19,7 +19,7 @@ export class MovieService{
     }
 
     getTheaters() {
-      return this._jsonp.get('https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2016-26-15&primary_release_date.lte=2016-10-30&api_key='+this.apikey)
+      return this._jsonp.get('https://api.themoviedb.org/3/discover/movie?callback=JSONP_CALLBACK&primary_release_date.gte=2016-09-26&primary_release_date.lte=2016-10-30&api_key='+this.apikey)
         .map(res => res.json());
     }
 
