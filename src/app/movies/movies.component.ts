@@ -9,13 +9,16 @@ import { MovieService } from '../services/movie.service';
 })
 export class MoviesComponent {
 
+  popularList: Array<Object>;
+  theatersList: Array<Object>;
+
     constructor(private _movieService: MovieService) { 
         this._movieService.getPopular().subscribe(res => {
-          //console.log(res.results);
+          this.popularList = res.results;
         });
 
         this._movieService.getTheaters().subscribe(res => {
-          console.log(res.results);
+          this.theatersList = res.results;
         });
     }
 }
