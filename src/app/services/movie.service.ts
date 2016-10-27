@@ -29,7 +29,7 @@ export class MovieService{
     }
 
     getMovie(id: string){
-        return this._jsonp.get('https://api.themoviedb.org/3/discover/movie/'+id+'?callback=JSONP_CALLBACK&api_key='+this.apikey)
+        return this._jsonp.get('https://api.themoviedb.org/3/movie/'+id+'?callback=JSONP_CALLBACK&api_key='+this.apikey)
         .map(res => res.json());
     }
 
